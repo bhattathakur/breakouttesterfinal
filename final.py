@@ -251,10 +251,11 @@ ax.axhline(y=mean_return, color='blue', linestyle='--')
 ax.bar_label(ax.containers[0], rotation=0, fontsize=8)
 ax.set_xticklabels(custom_ticks, rotation=90)
 #annotation
+text_color='green' if mean_return>0 else 'magenta'
 ax.annotate(f'mean_return: {mean_return:0.2f} %',
             xy=(0.5,0.5),
             bbox=dict(facecolor='yellow', edgecolor='black', boxstyle='round,pad=0.5'),  # Highlight with yellow background
-            color='magenta',
+            color=text_color,
     xycoords='axes fraction',  # Use axes fraction coordinates for the annotation
     textcoords='axes fraction'  # Use axes fraction coordinates for the text
             )
