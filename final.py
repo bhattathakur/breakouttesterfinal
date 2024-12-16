@@ -109,7 +109,7 @@ if debug:st.write(f'before resetting index ...{df_temp.columns}')
 if debug:st.write(df_temp)
 #if debug:st.write(df_temp.columns)
   
-remote=False
+remote=True
 if remote:
    df=df_temp[user_ticker]
 else:
