@@ -110,7 +110,7 @@ if debug:st.write(df_temp)
 if debug:st.write(df_temp.columns)
 
 #might need to change this part for the remote
-remote=False
+remote=True
 if remote:
    df=df_temp[user_ticker]
 else:
