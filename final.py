@@ -148,10 +148,10 @@ if float(holding_time) > days_diff:
 
 
 #volume threshold percentage
-volume_threshold=st.sidebar.number_input("Enter the volume threshold %",value=20.0,min_value=0.0)
+volume_threshold=st.sidebar.number_input("Enter volume threshold %",value=20.0,min_value=0.0)
 if debug:st.write(f'volume_threshold: {volume_threshold}')
 #volume threshold percentage
-pct_threshold=st.sidebar.number_input("Enter the percent threshold %",value=2.0,min_value=0.0)
+pct_threshold=st.sidebar.number_input("Enter the change threshold %",value=2.0,min_value=0.0)
 if debug:st.write(f'pct_threshold: {pct_threshold}')
 if debug:st.write(f'before adding columns: {df.columns}')
 if debug:st.write(df.head())
