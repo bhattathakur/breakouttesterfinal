@@ -224,7 +224,7 @@ def color_val(val):
 df_fin=df_final.style.applymap(color_val,subset=['return(%)'])#.format('{:.2f}')
 
 #st.dataframe(df_final,use_container_width=True)
-st.markdown(df_fin.to_html(),use_container_width=True)
+st.markdown(df_fin.to_html(),unsafe_allow_html=True)
 #include download button
 file_name=f'{user_ticker}.csv'
 csv=df_final.to_csv()
