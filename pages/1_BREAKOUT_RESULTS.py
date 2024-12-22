@@ -225,7 +225,7 @@ def color_val(val):
  # Style the DataFrame
 df_fin = (
 df_final.style.format("{:.2f}", subset=df_final.select_dtypes(include=["float64", "int64"]).columns)
-.apply(lambda row:row.apply(style_table), subset=["return(%)", "mean_return(%)"],axis=1)
+.apply(lambda row:row.apply(color_val), subset=["return(%)", "mean_return(%)"],axis=1)
 )
 #st.dataframe(df_final,use_container_width=True)
 st.markdown(df_fin.to_html(),unsafe_allow_html=True)
