@@ -4,6 +4,7 @@ import pandas as pd
 import yfinance as yf
 import streamlit as st
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 st.set_page_config(layout='wide')
 
@@ -281,6 +282,7 @@ mean_return=df_final['return(%)'].mean()
 #custom_ticks
 if debug:st.write(custom_ticks)
 # Plotting the bar chart
+sns.set_theme()
 fig, ax = plt.subplots(figsize=(15, 6))
 ax = df_final['return(%)'].plot(kind='bar', ax=ax, color=colors)
 ax.set_ylabel('return(%)')
