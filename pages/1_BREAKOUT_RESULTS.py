@@ -286,6 +286,7 @@ ax = df_final['return(%)'].plot(kind='bar', ax=ax, color=colors)
 ax.set_ylabel('return(%)')
 ax.set_xlabel('buy/sell dates')
 ax.axhline(y=mean_return, color='blue', linestyle='--')
+ax.axhline(y=0, color='black', linestyle='-')
 ax.bar_label(ax.containers[0], rotation=0, fontsize=8)
 ax.set_xticklabels(custom_ticks, rotation=90)
 #annotation
