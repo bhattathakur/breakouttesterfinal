@@ -252,6 +252,7 @@ df_final.style
 .set_properties(**style_dict)
 )
 #st.dataframe(df_final,use_container_width=True)
+df_fin['holding_days']=df_fin['holding_days'].astype(int)
 
 st.markdown(df_fin.to_html(),unsafe_allow_html=True)
 #include download button
