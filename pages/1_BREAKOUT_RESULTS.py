@@ -240,7 +240,7 @@ style_dict = {
     'font-size': '14px',
    # 'font-weight': 'bold',
    # 'color': 'green',
-    'background-color': '#f0f0f0',
+   # 'background-color': '#f0f0f0',
     'border': '0.5px solid black',
     #'border-radius': '5px',
     'padding': '10px'
