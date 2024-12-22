@@ -309,4 +309,6 @@ title_text=f'{user_ticker} | start_date: {start_date} | end_date: {end_date} | h
 plt.title(title_text)
 #plt.grid(True)
 # Render the plot in Streamlit
-st.pyplot(fig)
+#containner 2
+with st.container():
+ st.pyplot(fig)
