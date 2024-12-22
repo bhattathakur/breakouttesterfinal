@@ -233,8 +233,18 @@ df_final=df_final.reset_index(drop=True)
 df_final.index=range(1,len(df_final)+1)
 df_final.dropna(inplace=True)
 #df_final.index.name='S.N.'
-style_dict={'text-align':'center','font-size':'14px'}
-
+#style_dict={'text-align':'center','font-size':'14px'}
+style_dict = {
+    'text-align': 'center',
+    'font-family': 'Arial',
+    'font-size': '14px',
+    'font-weight': 'bold',
+    'color': 'green',
+    'background-color': '#f0f0f0',
+    'border': '1px solid black',
+    'border-radius': '5px',
+    'padding': '10px'
+}
 df_fin = (
 df_final.style
 .format("{:.2f}", subset=df_final.select_dtypes(include=["float64", "int64"]).columns)
