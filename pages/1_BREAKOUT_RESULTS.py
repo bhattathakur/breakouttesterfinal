@@ -234,7 +234,7 @@ df_final.index=range(1,len(df_final)+1)
 df_final.dropna(inplace=True)
 #df_final.index.name='S.N.'
 #style_dict={'text-align':'center','font-size':'14px'}
-df_final['holding_days']=df_final['holding_days'].astype(int)
+#df_final['holding_days']=df_final['holding_days'].astype(int)
 style_dict = {
     'text-align': 'center',
     'font-family': 'Courier,monospace',
@@ -248,7 +248,7 @@ style_dict = {
 }
 df_fin = (
 df_final.style
-.format("{:.2f}", subset=df_final.select_dtypes(include=["float64", "int64"]).columns)
+.format("{:.2f}", subset=df_final.select_dtypes(include=["float64"]).columns)
 .apply(lambda row:row.apply(color_val), subset=["return(%)", "mean_return(%)"],axis=1)
 .set_properties(**style_dict)
 )
