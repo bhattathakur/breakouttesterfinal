@@ -234,6 +234,7 @@ df_final.index=range(1,len(df_final)+1)
 df_final.dropna(inplace=True)
 #df_final.index.name='S.N.'
 #style_dict={'text-align':'center','font-size':'14px'}
+df_final['holding_days']=df_final['holding_days'].astype(int)
 style_dict = {
     'text-align': 'center',
     'font-family': 'Courier,monospace',
@@ -252,7 +253,7 @@ df_final.style
 .set_properties(**style_dict)
 )
 #st.dataframe(df_final,use_container_width=True)
-df_fin['holding_days']=df_fin['holding_days'].astype(int)
+
 
 st.markdown(df_fin.to_html(),unsafe_allow_html=True)
 #include download button
