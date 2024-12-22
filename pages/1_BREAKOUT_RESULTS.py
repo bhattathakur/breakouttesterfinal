@@ -176,7 +176,7 @@ if df_buy.empty:
 df_buy.reset_index(drop=False,inplace=True)
 if debug:st.write(f'df_buy_columns: {df_buy.columns}')
 if debug:st.write(f'df_buy: {df_buy}')
-st.markdown(f"<h4 Style='text-align:center;'>RESULTS FOR GIVEN CONDITION FOR {user_ticker.upper()}</h4>",unsafe_allow_html=True)
+st.markdown(f"<h4 Style='text-align:center;'>RESULTS FOR GIVEN CONDITIONS FOR {user_ticker.upper()}</h4>",unsafe_allow_html=True)
 #getting selling date and price
 #Need to fix this part
 #find the date original dataframe
