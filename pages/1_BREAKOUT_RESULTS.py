@@ -233,7 +233,7 @@ df_final=df_final.reset_index(drop=True)
 df_final.index=range(1,len(df_final)+1)
 df_final.dropna(inplace=True)
 #df_final.index.name='S.N.'
-style_dict={'text-align:center'}
+style_dict={'text-align':'center'}
 
 df_fin = (
 df_final.style
