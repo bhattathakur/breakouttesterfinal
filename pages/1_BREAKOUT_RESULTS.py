@@ -212,8 +212,8 @@ df_final['holding_days']=holding_time
 df_final['volume_threshold(%)']=volume_threshold
 df_final['last_change_threshold(%)']=pct_threshold
 df_final.index=range(1,len(df_final)+1)
-df_final.index.name='S.N.'
-df_final.dropna(inplace=True)
+# df_final.index.name='S.N.'
+# df_final.dropna(inplace=True)
 #debug=True
 #if debug:st.write(df_buy)
 #color the values
@@ -230,6 +230,8 @@ df_final.columns.name=''
 # st.stop()
 #df_final.drop(columns=[('Level1','Price')],inplace=True) #remove Price1 from the Level1
 df_final=df_final.reset_index(drop=True)
+df_final.index=range(1,len(df_final)+1)
+df_final.index.name='S.N.'
 
 df_fin = (
 df_final.style.format("{:.2f}", subset=df_final.select_dtypes(include=["float64", "int64"]).columns)
