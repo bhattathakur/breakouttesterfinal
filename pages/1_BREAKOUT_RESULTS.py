@@ -220,6 +220,10 @@ df_final.index=range(1,len(df_final)+1)
 def color_val(val):
    if val>0:return "color:green;"
    return "color:red;"
+
+# Function to alternate row colors
+def alternating_row_colors(row):
+    return ['background-color: lightgray' if row.name % 2 == 0 else 'background-color: white'] * len(row)
 #df_fin=df_final.style.applymap(color_val,subset=['return(%)'])#.format('{:.2f}')
 #df_fin=df_final.style.applymap(color_val,subset=['return(%)'])#.format('{:.2f}')
  # Style the DataFrame
@@ -250,6 +254,7 @@ df_fin = (
 df_final.style
 .format("{:.2f}", subset=df_final.select_dtypes(include=["float64"]).columns)
 .apply(lambda row:row.apply(color_val), subset=["return(%)", "mean_return(%)"],axis=1)
+.apply(alternating_row_colors,axis=1)
 .set_properties(**style_dict)
 )
 #st.dataframe(df_final,use_container_width=True)
