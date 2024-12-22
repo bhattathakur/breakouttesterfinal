@@ -225,9 +225,9 @@ def color_val(val):
  # Style the DataFrame
 #columns:
 df_final.columns.name=''
-st.write(f'column_name:',df_final.columns.name)
-st.write(df_final.columns.to_list())
-st.stop()
+# st.write(f'column_name:',df_final.columns.name)
+# st.write(df_final.columns.to_list())
+# st.stop()
 #df_final.drop(columns=[('Level1','Price')],inplace=True) #remove Price1 from the Level1
 df_fin = (
 df_final.style.format("{:.2f}", subset=df_final.select_dtypes(include=["float64", "int64"]).columns)
