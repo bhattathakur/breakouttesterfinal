@@ -238,7 +238,7 @@ style_dict={'text-align:center'}
 df_fin = (
 df_final.style.format("{:.2f}", subset=df_final.select_dtypes(include=["float64", "int64"]).columns)
 .apply(lambda row:row.apply(color_val), subset=["return(%)", "mean_return(%)"],axis=1)
-.set_properties(**style_dict)
+.style.set_properties(**style_dict)
 )
 #st.dataframe(df_final,use_container_width=True)
 
