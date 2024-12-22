@@ -223,7 +223,7 @@ def color_val(val):
 
 # Function to alternate row colors
 def alternating_row_colors(row):
-    return ['background-color: #F9F9F9' if row.name % 2 == 0 else 'background-color: white'] * len(row)
+    return ['background-color: #D3D3D3' if row.name % 2 == 0 else 'background-color: white'] * len(row)
 #df_fin=df_final.style.applymap(color_val,subset=['return(%)'])#.format('{:.2f}')
 #df_fin=df_final.style.applymap(color_val,subset=['return(%)'])#.format('{:.2f}')
  # Style the DataFrame
