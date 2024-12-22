@@ -231,6 +231,7 @@ df_final.columns.name=''
 #df_final.drop(columns=[('Level1','Price')],inplace=True) #remove Price1 from the Level1
 df_final=df_final.reset_index(drop=True)
 df_final.index=range(1,len(df_final)+1)
+df_final.dropna(inplace=True)
 #df_final.index.name='S.N.'
 
 df_fin = (
