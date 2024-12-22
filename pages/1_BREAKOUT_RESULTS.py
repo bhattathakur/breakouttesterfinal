@@ -224,7 +224,7 @@ def color_val(val):
 #df_fin=df_final.style.applymap(color_val,subset=['return(%)'])#.format('{:.2f}')
  # Style the DataFrame
 #columns:
-st.write(df_final.columns)
+st.write(df_final.columns.to_list())
 st.stop()
 df_final.drop(columns=[('Level1','Price')],inplace=True) #remove Price1 from the Level1
 df_fin = (
