@@ -238,13 +238,13 @@ df_final.dropna(inplace=True)
 style_dict = {
     'text-align': 'center',
     'font-family': 'Courier,monospace',
-    'font-size': '12px',
+    'font-size': '16px',
    'font-weight': 'bold',
    # 'color': 'green',
    # 'background-color': '#f0f0f0',
     'border': '0.5px solid black',
     #'border-radius': '5px',
-    'padding': '10px'
+    'padding': '5px'
 }
 df_fin = (
 df_final.style
