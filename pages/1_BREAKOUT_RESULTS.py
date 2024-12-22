@@ -223,11 +223,13 @@ def color_val(val):
 #df_fin=df_final.style.applymap(color_val,subset=['return(%)'])#.format('{:.2f}')
 #df_fin=df_final.style.applymap(color_val,subset=['return(%)'])#.format('{:.2f}')
  # Style the DataFrame
+df_fin(columns=['Level1','Price')],inplace=True) #remove Price1 from the Level1
 df_fin = (
 df_final.style.format("{:.2f}", subset=df_final.select_dtypes(include=["float64", "int64"]).columns)
 .apply(lambda row:row.apply(color_val), subset=["return(%)", "mean_return(%)"],axis=1)
 )
 #st.dataframe(df_final,use_container_width=True)
+
 st.markdown(df_fin.to_html(),unsafe_allow_html=True)
 #include download button
 file_name=f'{user_ticker}.csv'
