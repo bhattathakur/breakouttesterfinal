@@ -238,7 +238,7 @@ df_final.dropna(inplace=True)
 style_dict = {
     'text-align': 'center',
     'font-family': 'Courier,monospace',
-    'font-size': '14px',
+    'font-size': '12px',
    'font-weight': 'bold',
    # 'color': 'green',
    # 'background-color': '#f0f0f0',
