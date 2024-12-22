@@ -60,7 +60,7 @@ user_ticker=st.sidebar.text_input("Enter a ticker",value='TSLA',key='ticker').up
 if debug:st.write(f'ticker: {user_ticker}')
 
 #start and end date
-start_date=st.sidebar.date_input('Enter start business date',value=pd.to_datetime("2024/01/02"))
+start_date=st.sidebar.date_input('Select start business date',value=pd.to_datetime("2024/01/02"))
 if debug:st.write(f'start_date: {start_date}')
 
 #check if the start date is a business day
@@ -75,7 +75,7 @@ date_today=pd.to_datetime('today').normalize().date()
 if debug:st.write(f'today: {date_today}')
 bdate=pd.bdate_range(end=date_today,periods=1)[0]
 if debug:st.write(f'last_business_day: {bdate}')
-end_date=st.sidebar.date_input('Enter end business date',value=bdate)
+end_date=st.sidebar.date_input('Select end business date',value=bdate)
 if debug:st.write(f'end_date: {end_date}')
 
 if not is_business_day(end_date):
@@ -176,7 +176,7 @@ if df_buy.empty:
 df_buy.reset_index(drop=False,inplace=True)
 if debug:st.write(f'df_buy_columns: {df_buy.columns}')
 if debug:st.write(f'df_buy: {df_buy}')
-st.markdown("<h4 Style='text-align:center;'>RESULTS FOR GIVEN CONDITION</h4>",unsafe_allow_html=True)
+st.markdown(f"<h4 Style='text-align:center;'>RESULTS FOR GIVEN CONDITION FOR {user_ticker.upper()}</h4>",unsafe_allow_html=True)
 #getting selling date and price
 #Need to fix this part
 #find the date original dataframe
