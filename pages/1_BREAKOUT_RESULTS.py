@@ -233,10 +233,12 @@ df_final=df_final.reset_index(drop=True)
 df_final.index=range(1,len(df_final)+1)
 df_final.dropna(inplace=True)
 #df_final.index.name='S.N.'
+style_dict={'text-align:center'}
 
 df_fin = (
 df_final.style.format("{:.2f}", subset=df_final.select_dtypes(include=["float64", "int64"]).columns)
 .apply(lambda row:row.apply(color_val), subset=["return(%)", "mean_return(%)"],axis=1)
+.set_properties(**style_dict)
 )
 #st.dataframe(df_final,use_container_width=True)
 
