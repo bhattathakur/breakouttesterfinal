@@ -260,8 +260,9 @@ df_final.style
 )
 #st.dataframe(df_final,use_container_width=True)
 
-
-st.markdown(df_fin.to_html(),unsafe_allow_html=True)
+#container 1
+with st.container():
+ st.markdown(df_fin.to_html(),unsafe_allow_html=True)
 #include download button
 file_name=f'{user_ticker}.csv'
 csv=df_final.to_csv()
