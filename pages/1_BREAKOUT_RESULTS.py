@@ -311,8 +311,7 @@ ax.annotate(f'mean_return: {mean_return:0.2f} %',
 legend=ax.legend([f'mean_return(%)'])
 ax.tick_params(axis='y',which='both',left=True,right=True,direction='in')
 ax.tick_params(axis='x',which='both',top=True,bottom=True,direction='in')
-title_text=f'{user_ticker} | start_date: {start_date} | end_date: {end_date} | holding_days: {holding_time}\
-     | volume_threshold%: {volume_threshold} | price_change_threshold%: {pct_threshold} | win_rate: {win_rate} %'
+title_text=f'{user_ticker} | start_date: {start_date} | end_date: {end_date} | holding_days: {holding_time} | volume_threshold%: {volume_threshold} | price_change_threshold%: {pct_threshold} | win_rate: {win_rate} %'
 plt.title(title_text)
 #plt.grid(True)
 # Render the plot in Streamlit
