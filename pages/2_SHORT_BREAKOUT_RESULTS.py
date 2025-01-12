@@ -176,7 +176,7 @@ if df_sell.empty:
 #NOTE:resetting the columns to get Date column, otherwise it is interpreted as the index by streamlit
 df_sell.reset_index(drop=False,inplace=True)
 if debug:st.write(f'df_sell_columns: {df_sell.columns}')
-if debug:st.write(f'df_sell: {df_sell}')
+if debug:st.write(f'df_sell: {df_sell.to_string()}')
 st.markdown(f"<h4 Style='text-align:center;'>RESULTS FOR GIVEN CONDITIONS FOR {user_ticker.upper()}</h4>",unsafe_allow_html=True)
 #getting selling date and price
 #Need to fix this part
