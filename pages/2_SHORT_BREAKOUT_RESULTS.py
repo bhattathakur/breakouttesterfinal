@@ -185,23 +185,23 @@ st.markdown(f"<h4 Style='text-align:center;'>RESULTS FOR GIVEN CONDITIONS FOR {u
 #test_df=df_buy['Date']
 #st.write(f'test_df: {test_df}')
 #df_buy.loc[:,'selling_date']=df_buy['row_key'].copy().map(lambda buy_row:get_selling_date_and_close(df,buy_row,holding_time)[0])
-st.stop()
-df_buy.loc[:,'selling_date']=df_buy['row_key'].apply(lambda buy_row:get_selling_date_and_close(df,buy_row,holding_time)[0])
-df_buy.loc[:,'selling_price']=df_buy['row_key'].copy().map(lambda buy_row:get_selling_date_and_close(df,buy_row,holding_time)[1])
-df_buy.loc[:,'return(%)']=(df_buy['selling_price'].copy()/df_buy['Close'].copy()-1)*100
-df_buy.loc[:,'mean_return(%)']=df_buy['return(%)'].mean()
-df_buy.insert(1,'ticker',user_ticker)
+#st.stop()
+df_sell.loc[:,'buying_date']=df_sell['row_key'].apply(lambda sell_row:get_selling_date_and_close(df,sell_row,holding_time)[0])
+df_sell.loc[:,'buying_price']=df_sell['row_key'].copy().map(lambda sell_row:get_selling_date_and_close(df,sell_row,holding_time)[1])
+df_sell.loc[:,'return(%)']=(df_sell['buying_price'].copy()/df_sell['Close'].copy()-1)*100
+df_sell.loc[:,'mean_return(%)']=df_sell['return(%)'].mean()
+df_sell.insert(1,'ticker',user_ticker)
 
-#change the volume into millions
-df_buy['Volume']=df_buy['Volume'].div(1e6)
-df_buy['volume_average_20_days']=df_buy['volume_average_20_days'].div(1e6)
+#chselle the volume into millions
+df_sell['Volume']=df_sell['Volume'].div(1e6)
+df_sell['volume_average_20_days']=df_sell['volume_average_20_days'].div(1e6)
 
 #getting final df 
-if debug:st.write('DF_BUY')
-if debug:st.write(df_buy)
-if debug:st.write(df_buy.columns)
-if debug:st.write(f'index: {df_buy.index}')
-#st.stop()
+if debug:st.write('DF_SELL')
+if debug:st.write(df_sell)
+if debug:st.write(df_sell.columns)
+if debug:st.write(f'index: {df_sell.index}')
+st.stop()
 
 selected_columns=['ticker','Date','Close','selling_date','selling_price','return(%)','mean_return(%)','Volume','volume_average_20_days']
 df_final=df_buy[selected_columns].reset_index(drop=True)
