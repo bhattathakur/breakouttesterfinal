@@ -201,11 +201,11 @@ if debug:st.write('DF_SELL')
 if debug:st.write(df_sell)
 if debug:st.write(df_sell.columns)
 if debug:st.write(f'index: {df_sell.index}')
-st.stop()
+#st.stop()
 
 selected_columns=['ticker','Date','Close','selling_date','selling_price','return(%)','mean_return(%)','Volume','volume_average_20_days']
 df_final=df_buy[selected_columns].reset_index(drop=True)
-df_final=df_final.rename(columns={'Close':'buying_price','Date':'buying_date','Volume':'traded_volume(M)','volume_average_20_days':'avg_20days_vol(M)'}).round(2)
+df_final=df_final.rename(columns={'Close':'selling_price','Date':'selling_date','Volume':'traded_volume(M)','volume_average_20_days':'avg_20days_vol(M)'}).round(2)
 
 #modify the buying and selling date
 #might need to change to datetime if needed
