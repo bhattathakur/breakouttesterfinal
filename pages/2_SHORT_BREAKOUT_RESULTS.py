@@ -253,7 +253,7 @@ df_final.dropna(inplace=True)
 #df_final['holding_days']=df_final['holding_days'].astype(int)
 #get the total trades and number of win counts in the dataframe to use in the plot header
 
-st.write(f"total_trades: {total_trades} | win_trades: {win_trades} | win_percentage: {win_rate}")
+if debug:st.write(f"total_trades: {total_trades} | win_trades: {win_trades} | win_percentage: {win_rate}")
 style_dict = {
     'text-align': 'center',
     'font-family': 'Courier,monospace',
