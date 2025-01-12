@@ -240,6 +240,12 @@ df_final.dropna(inplace=True)
 #df_final.index.name='S.N.'
 #style_dict={'text-align':'center','font-size':'14px'}
 #df_final['holding_days']=df_final['holding_days'].astype(int)
+#get the total trades and number of win counts in the dataframe to use in the plot header
+total_trades=len(df_final)
+win_trades=len(df_final[df_final['reuturn(%)']>0])
+win_pct=round(win_trades*100/total_trades,2)
+
+st.write(f"total_trades: {total_trades} | win_trades: {win_trades} | win_percentage: {win_pct}")
 style_dict = {
     'text-align': 'center',
     'font-family': 'Courier,monospace',
