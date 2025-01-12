@@ -314,3 +314,4 @@ with st.container():
  st.pyplot(fig)
 #container 2
 with st.container():
+ st.markdown(df_fin.to_html(),unsafe_allow_html=True)
