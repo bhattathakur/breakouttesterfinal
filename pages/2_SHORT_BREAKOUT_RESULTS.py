@@ -188,7 +188,7 @@ st.markdown(f"<h4 Style='text-align:center;'>RESULTS FOR GIVEN CONDITIONS FOR {u
 #st.stop()
 df_sell.loc[:,'buying_date']=df_sell['row_key'].apply(lambda sell_row:get_selling_date_and_close(df,sell_row,holding_time)[0])
 df_sell.loc[:,'buying_price']=df_sell['row_key'].copy().map(lambda sell_row:get_selling_date_and_close(df,sell_row,holding_time)[1])
-df_sell.loc[:,'return(%)']=(df_sell['buying_price'].copy()/df_sell['Close'].copy()-1)*100
+df_sell.loc[:,'return(%)']=(1-df_sell['buying_price'].copy()/df_sell['Close'].copy())*100
 df_sell.loc[:,'mean_return(%)']=df_sell['return(%)'].mean()
 df_sell.insert(1,'ticker',user_ticker)
 
