@@ -162,7 +162,7 @@ if debug:st.write(df.head())
 df.loc[:,'daily_change%']=df['Close'].copy().pct_change()*100
 df.loc[:,'volume_average_20_days']=df['Volume'].copy().rolling(window=20).mean()
 df.loc[:,'volume_condition']=df['Volume'].copy()>df['volume_average_20_days'].copy()*(100+volume_threshold)/100
-df.loc[:,'percent_change_condition']=df['daily_change%'].copy()>pct_threshold
+df.loc[:,'percent_change_condition']=df['daily_change%'].copy()<pct_threshold #daily changes need to be smaller than the threshold
 df.loc[:,'buy_condition']=(df['volume_condition'].copy() & df['percent_change_condition'].copy())
 
 #filter the dataframe with df_buy
