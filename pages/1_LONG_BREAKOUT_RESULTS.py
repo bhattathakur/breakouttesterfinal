@@ -212,6 +212,11 @@ df_final['selling_date']=df_final['selling_date'].dt.date
 df_final['holding_days']=holding_time
 df_final['volume_threshold(%)']=volume_threshold
 df_final['last_change_threshold(%)']=pct_threshold
+total_trades=len(df_final)
+win_trades=len(df_final[df_final['return(%)']>0])
+win_rate=round(win_trades*100/total_trades,2)
+df_final['total_trades']=total_trades
+df_final['win_rate(%)']=win_rate
 df_final.index=range(1,len(df_final)+1)
 # df_final.index.name='S.N.'
 # df_final.dropna(inplace=True)
@@ -241,9 +246,6 @@ df_final.dropna(inplace=True)
 #style_dict={'text-align':'center','font-size':'14px'}
 #df_final['holding_days']=df_final['holding_days'].astype(int)
 #get the total trades and number of win counts in the dataframe to use in the plot header
-total_trades=len(df_final)
-win_trades=len(df_final[df_final['return(%)']>0])
-win_rate=round(win_trades*100/total_trades,2)
 
 #st.write(f"total_trades: {total_trades} | win_trades: {win_trades} | win_percentage: {win_rate}")
 style_dict = {
