@@ -54,7 +54,7 @@ def get_selling_date_and_close(df,buy_row,holding_period):
 #   return temp_df
 
 #user input ticker, start_date, end_date,volume_threshold%,%change on the end date,holding period
-debug=True
+debug=False
 #ask the user for the ticker
 user_ticker=st.sidebar.text_input("Enter a ticker",value='TSLA',key='ticker').upper()
 
