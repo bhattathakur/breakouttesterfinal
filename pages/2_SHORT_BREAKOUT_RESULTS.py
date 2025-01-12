@@ -217,6 +217,12 @@ df_final['last_change_threshold(%)']=pct_threshold
 total_trades=len(df_final)
 win_trades=len(df_final[df_final['return(%)']>0])
 win_rate=round(win_trades*100/total_trades,2)
+
+
+#adding the win rate and trade number to the dataframe
+df_final['total_trades']=total_trades
+df_final['win_rate(%)']=win_rate
+
 df_final.index=range(1,len(df_final)+1)
 # df_final.index.name='S.N.'
 # df_final.dropna(inplace=True)
