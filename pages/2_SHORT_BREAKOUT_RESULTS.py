@@ -163,20 +163,20 @@ df.loc[:,'daily_change%']=df['Close'].copy().pct_change()*100
 df.loc[:,'volume_average_20_days']=df['Volume'].copy().rolling(window=20).mean()
 df.loc[:,'volume_condition']=df['Volume'].copy()>df['volume_average_20_days'].copy()*(100+volume_threshold)/100
 df.loc[:,'percent_change_condition']=df['daily_change%'].copy()<pct_threshold #daily changes need to be smaller than the threshold
-df.loc[:,'buy_condition']=(df['volume_condition'].copy() & df['percent_change_condition'].copy())
+df.loc[:,'sell_condition']=(df['volume_condition'].copy() & df['percent_change_condition'].copy())
 
 #filter the dataframe with df_buy
 #BUY dataframe here onwards
 
-df_buy=df.copy()[df.copy()['buy_condition']==True]
-if df_buy.empty:
+df_sell=df.copy()[df.copy()['sell_condition']==True]
+if df_sell.empty:
    st.warning('NO DATA FOR GIVEN CONDITION',icon='⚠️')
    st.stop()
 
 #NOTE:resetting the columns to get Date column, otherwise it is interpreted as the index by streamlit
-df_buy.reset_index(drop=False,inplace=True)
-if debug:st.write(f'df_buy_columns: {df_buy.columns}')
-if debug:st.write(f'df_buy: {df_buy}')
+df_sell.reset_index(drop=False,inplace=True)
+if debug:st.write(f'df_sell_columns: {df_sell.columns}')
+if debug:st.write(f'df_sell: {df_sell}')
 st.markdown(f"<h4 Style='text-align:center;'>RESULTS FOR GIVEN CONDITIONS FOR {user_ticker.upper()}</h4>",unsafe_allow_html=True)
 #getting selling date and price
 #Need to fix this part
@@ -184,6 +184,7 @@ st.markdown(f"<h4 Style='text-align:center;'>RESULTS FOR GIVEN CONDITIONS FOR {u
 #test_df=df_buy['Date']
 #st.write(f'test_df: {test_df}')
 #df_buy.loc[:,'selling_date']=df_buy['row_key'].copy().map(lambda buy_row:get_selling_date_and_close(df,buy_row,holding_time)[0])
+st.stop()
 df_buy.loc[:,'selling_date']=df_buy['row_key'].apply(lambda buy_row:get_selling_date_and_close(df,buy_row,holding_time)[0])
 df_buy.loc[:,'selling_price']=df_buy['row_key'].copy().map(lambda buy_row:get_selling_date_and_close(df,buy_row,holding_time)[1])
 df_buy.loc[:,'return(%)']=(df_buy['selling_price'].copy()/df_buy['Close'].copy()-1)*100
