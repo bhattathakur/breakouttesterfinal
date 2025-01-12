@@ -245,7 +245,7 @@ total_trades=len(df_final)
 win_trades=len(df_final[df_final['return(%)']>0])
 win_rate=round(win_trades*100/total_trades,2)
 
-st.write(f"total_trades: {total_trades} | win_trades: {win_trades} | win_percentage: {win_rate}")
+#st.write(f"total_trades: {total_trades} | win_trades: {win_trades} | win_percentage: {win_rate}")
 style_dict = {
     'text-align': 'center',
     'font-family': 'Courier,monospace',
