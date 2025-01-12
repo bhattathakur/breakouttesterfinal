@@ -261,8 +261,8 @@ df_final.style
 #st.dataframe(df_final,use_container_width=True)
 
 #container 1
-with st.container():
- st.markdown(df_fin.to_html(),unsafe_allow_html=True)
+#with st.container():
+# st.markdown(df_fin.to_html(),unsafe_allow_html=True)
 #include download button
 file_name=f'{user_ticker}.csv'
 csv=df_final.to_csv()
@@ -309,6 +309,8 @@ title_text=f'{user_ticker} | start_date: {start_date} | end_date: {end_date} | h
 plt.title(title_text)
 #plt.grid(True)
 # Render the plot in Streamlit
-#containner 2
+#containner 1
 with st.container():
  st.pyplot(fig)
+#container 2
+with st.container():
