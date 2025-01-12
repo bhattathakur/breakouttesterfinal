@@ -291,7 +291,7 @@ st.sidebar.download_button(
 #this part is for the matplotlib plot
 x_ticks=df_final['buying_date'].to_list()
 y_ticks=df_final['selling_date'].to_list()
-custom_ticks=[f'BUY:{x}\nSELL:{y}' for x,y in zip(x_ticks,y_ticks)]
+custom_ticks=[f'SELL:{x}\nBUY:{y}' for x,y in zip(x_ticks,y_ticks)]
 colors=['green' if x>0 else 'red' for x in df_final['return(%)']]
 mean_return=df_final['return(%)'].mean()
 #custom_ticks
