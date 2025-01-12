@@ -54,7 +54,7 @@ def get_selling_date_and_close(df,buy_row,holding_period):
 #   return temp_df
 
 #user input ticker, start_date, end_date,volume_threshold%,%change on the end date,holding period
-debug=False
+debug=True
 #ask the user for the ticker
 user_ticker=st.sidebar.text_input("Enter a ticker",value='TSLA',key='ticker').upper()
 
@@ -152,7 +152,7 @@ if float(holding_time) > days_diff:
 volume_threshold=st.sidebar.number_input("Enter volume threshold %",value=20.0,min_value=0.0)
 if debug:st.write(f'volume_threshold: {volume_threshold}')
 #volume threshold percentage
-pct_threshold=st.sidebar.number_input("Enter change threshold %",value=-2.0,max_value=0.0)
+pct_threshold=st.sidebar.number_input("Enter change threshold %",value=-2.0,max_value=0.0) #making sure the max is 0 for negative change
 if debug:st.write(f'pct_threshold: {pct_threshold}')
 if debug:st.write(f'before adding columns: {df.columns}')
 if debug:st.write(df.head())
